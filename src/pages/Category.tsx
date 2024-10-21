@@ -50,40 +50,48 @@ function Category() {
   }
 
   return (
-    <div>
-      <button onClick={loadCategories}>Load Categories</button>
+    <div className="container mx-auto">
+      <button onClick={loadCategories} className="bg-cyan-950 mt-5 ms-2 p-2 text-0.5x text-cyan-300 bold border border-cyan-100 rounded hover:text-yellow-500   " >Load Categories</button>
+      
       {/* Conditional rendering */}
       {categories && categories.length > 0 ? (
         categories.map((category: CategoryType) => {
           return (
-            <div key={category.id}> {/* Add key to ensure efficient rendering */}
-              <p>ID: {category.id}</p>
-              <p>Name: {category.name}</p>
-              <p>Description: {category.description}</p>
+            <div className="text-cyan-500 px-1 text-0.5x border border-cyan-100 rounded p-2 mt-5 ">
+            <div className="flex flex-row " key={category.id}> {/* Add key to ensure efficient rendering */}
+              <p className="text-cyan-600 me-6">ID: {category.id}</p>
+              <p className="text-cyan-400 me-6">Name: {category.name}</p>
+              <p className="text-cyan-300 me-6">Description: {category.description}</p>
+            </div>
             </div>
           );
         })
       ) : (
-        <p>No categories found.</p> // fallback message if no categories exist
+        <p className="text-rose-400">No categories found.</p> // fallback message if no categories exist
       )}
-      
-      <h2>Create Category</h2>
+      <div className="place-items-end py-8 ">
+      <h1 className="ms-2 text-lg font-bold text-cyan-400 ">Create Category</h1>
       <form onSubmit={handleSubmit}>
-        <label>Category Name</label>
-        <input
+        <label className="text-0.5x p-2 text-base mt-5">Category Name</label>
+        <input className="text-0.5x border border-cyan-100 rounded p-2 mt-5"
           type="text"
           value={categoryName} // Bind input field to state
           onChange={handleCategoryName}
           required
         />
-        <label>Description</label>
-        <input
+        <label className="text-0.5x p-2 text-base mt-5">Description</label>
+        <input className="text-0.5x border border-cyan-100 rounded p-2 mt-5"
           type="text"
           value={description} // Bind input field to state
           onChange={handleDescription}
         />
-        <button type="submit">Create Category</button>
+        
+        <button type="submit" className="bg-cyan-950 mt-5 ms-2 p-2 text-0.5x text-cyan-300 bold border border-cyan-100 rounded hover:text-yellow-500   ">Create Category</button>
+        
       </form>
+
+      </div>
+      
     </div>
   );
 }
