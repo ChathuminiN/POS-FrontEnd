@@ -50,8 +50,9 @@ function Category() {
   }
 
   return (
+    
     <div className="container mx-auto pt-5 pb-5">
-      <button onClick={loadCategories} className="bg-cyan-950 mt-5 ms-2 p-2 text-0.5x text-cyan-300 bold border border-cyan-100 rounded hover:text-yellow-500   " >Load Categories</button>
+      <h1 className="text-xl text-amber-300">ITEM CATEGORIES </h1>
       
       {/* Conditional rendering */}
       {categories && categories.length > 0 ? (
@@ -69,9 +70,9 @@ function Category() {
       ) : (
         <p className="text-rose-400">No categories found.</p> // fallback message if no categories exist
       )}
-      <div className="place-items-end py-8 ">
-        <h1 className="ms-2 text-lg font-bold text-cyan-400 ">Create Category</h1>
-        <form onSubmit={handleSubmit}>
+      <div>
+        <h1 className="mt-4 ms-2 text-lg font-bold text-cyan-400 text-left">Create Category</h1>
+        <form onSubmit={handleSubmit} >
           <label className="text-0.5x p-2 text-base mt-5">Category Name</label>
           <input className="text-0.5x border border-cyan-100 rounded p-2 mt-5"
             type="text"
