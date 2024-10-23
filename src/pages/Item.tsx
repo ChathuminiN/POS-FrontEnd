@@ -110,6 +110,7 @@ function Item() {
           <tr>
             <th className="border border-cyan-500 w-[80px]">ID</th>
             <th className="border border-cyan-500 w-[200px]">Name</th>
+            <th className="border border-cyan-500 w-[150px]">Description</th>
             <th className="border border-cyan-500 w-[150px]">Price</th>
             <th className="border border-cyan-500 w-[125px]">Action</th>
           </tr>
@@ -123,14 +124,25 @@ function Item() {
               <td className="border border-cyan-500 w-[200px]">
                 {item.name}
               </td>
-              <td className="text-right border border-cyan-500 w-[150px]">
-                {item.price}
+              <td className="border border-cyan-500 w-[200px]">
+                {item.description}
               </td>
-              <td className="text-center border border-cyan-500 w-[125px]">
-                <button className="items-center bg-cyan-950 mt-5 ms-2 p-2 text-sm text-cyan-300 font-bold border border-cyan-100 rounded hover:text-yellow-500">
-                  Edit
-                </button>
+              <td className="border border-cyan-500 w-[100px] text-right">
+                {item.price.toFixed(2)}
               </td>
+              
+              <td className="border border-cyan-500 w-[125px]">
+                <div className="flex justify-center items-center">
+                  <button className="bg-cyan-950 p-0.3 m-1 text-sm text-cyan-300 font-bold border border-cyan-100 rounded hover:text-emerald-400 mx-4">
+                     Edit 
+                  </button>
+                  <button className="bg-cyan-950 p-0.3 m-1 text-sm text-cyan-300 font-bold border border-cyan-100 rounded hover:text-rose-500 mx-4">
+                     Delete 
+                  </button>
+                </div>
+              </td>
+              
+              
             </tr>
           ))}
         </tbody>
