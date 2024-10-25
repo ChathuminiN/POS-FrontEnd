@@ -2,8 +2,9 @@ import './App.css';
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import Category from './pages/Category';
 import Item from './pages/Item';
-import Sales from './pages/Sales';
 import Stock from './pages/Stock';
+import Order from './pages/orders/Order';
+import CreateOrder from './pages/orders/CreateOrder';
 
 function App() {
   return (
@@ -12,9 +13,11 @@ function App() {
         {/* Default redirect to /category */}
         
         <Route path="/category" element={<Category />} />
-        <Route path="/item" element={<Item/>} />
-        <Route path="/sales" element={<Sales/>} />
+        <Route path="/item" element={<Item/>} />        
         <Route path="/stock" element={<Stock/>} />
+        <Route path="/order" element={<Order/>} />
+        <Route path="/order/create" element={<CreateOrder/>} />
+        
         
       </Routes>
     </BrowserRouter>
