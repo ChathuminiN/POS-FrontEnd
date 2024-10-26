@@ -45,13 +45,12 @@ function CreateOrder() {
         }
 
         try {
-            await axios.post("http://localhost:8082/orders", { itemIds });
+            await axios.post("http://localhost:8082/orders",{itemIds});
             alert("Order placed successfully!");
-            navigate("/order");
+            navigate("/orders");
         } catch (error) {
             console.error("Error during checkout:", error);
 
-            
         }
     }
 
@@ -77,7 +76,7 @@ function CreateOrder() {
 
             {/* Order summary and checkout section */}
             <div className="p-2">
-                <span className="text-xl font-semibold text-yellow-300">New Order</span>
+                <span className="text-xl font-semibold text-yellow-300 justify-items-end">New Order</span>
                 <table className="border-collapse border border-slate-500 mt-5">
                     <thead>
                         <tr>

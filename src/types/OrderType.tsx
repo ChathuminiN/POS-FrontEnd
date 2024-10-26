@@ -4,9 +4,11 @@ import ItemType from "./ItemType";
 interface OrderType{
     
     id:number,
-    totalPrice:number,
-    orderDateAndTime:Date,
+    total_price:number,
+    orderDateTime:Date,
     OrderedItem:ItemType[]
+
+    
 }
 
 export default OrderType;
